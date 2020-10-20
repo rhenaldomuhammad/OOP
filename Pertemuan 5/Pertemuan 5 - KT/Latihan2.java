@@ -87,21 +87,21 @@ public class Latihan2 {
         Player2 player2 = new Player2("Sova",67);
 
         // membuat object weapon
-        Weapon2 pedang = new Weapon2("Phantom",60);
-        Weapon2 ketapel = new Weapon2("Vandal",70);
+        Weapon2 rifles = new Weapon2("Phantom",60);
+        Weapon2 rifles2 = new Weapon2("Vandal",70);
 
         // membuat object armor
         Armor2 bajuBesi = new Armor2("Heavy Shield",50);
-        Armor2 kaos = new Armor2("Light Shield",25);
+        Armor2 bajuAlumunium = new Armor2("Light Shield",25);
 
         // player 1
-        player1.equipWeapon(pedang);
+        player1.equipWeapon(rifles);
         player1.equipArmor(bajuBesi);
         player1.display();
 
         // player 2
-        player2.equipWeapon(ketapel);
-        player2.equipArmor(kaos);
+        player2.equipWeapon(rifles2);
+        player2.equipArmor(bajuAlumunium);
         player2.display();
 
         System.out.println("\nRANKED - MAP ICEBOX");
