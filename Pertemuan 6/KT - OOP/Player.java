@@ -1,18 +1,23 @@
 package com.pboreg;
 
-
-class Player {
+public class Player {
     private String name;
+    private static int jumlahPlayer;
 
+    //overloading constructor
+    //opsi 1
     Player(String name){
+        Player.jumlahPlayer++;
         this.name = name;
     }
 
-    void setName(String name){
-        this.name = name;
+    //opsi 2
+    Player(){
+        Player.jumlahPlayer++;
+        this.name = "player" + Player.jumlahPlayer;
     }
-
     void show(){
-        System.out.println("Player name = " + this.name);
+        System.out.println("Name : " + this.name);
     }
+
 }
