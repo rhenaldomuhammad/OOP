@@ -14,7 +14,7 @@ class Orang{
 
     public String getNama (){
 
-        return this.nama;
+        return this.nama   ;
     }
 
 }
@@ -61,6 +61,7 @@ class Pegawai extends Orang {
     }
 
     public void setJabatan(String jabatan) {
+
         this.jabatan = jabatan;
     }
     public static double pajakGaji(double x, int y){
@@ -71,13 +72,15 @@ class Pegawai extends Orang {
         int gajiPokok = 0;
         int tunjangan = 0;
         int gajiLembur;
+
         int totalGaji;
         int lembur;
         double gajiBersih;
+        double tax;
 
         if (golongan == 1) {
             gajiPokok = 1486500;
-            tunjangan = 300000;
+            tunjangan = 250000;
         }
         if (golongan == 2) {
             gajiPokok = 1926000;
@@ -98,16 +101,20 @@ class Pegawai extends Orang {
         else {
             lembur = jamKerja - 173;
         }
+
         gajiLembur = lembur * 20000;
+        totalGaji = gajiPokok + tunjangan;
         System.out.println("Gaji Pokok = Rp." + gajiPokok);
         System.out.println("Tunjangan = Rp." + tunjangan);
         System.out.println("Gaji Lembur = Rp." + gajiLembur);
-        totalGaji = gajiPokok + tunjangan + gajiLembur;
         double pajak = pajakGaji(0.5, 100)*totalGaji;
-        gajiBersih = totalGaji - pajak;
+        tax = totalGaji - pajak;
+        gajiBersih = tax + gajiLembur;
+
         System.out.println("=====================================");
-        System.out.println("Total Gaji sebelum pajak 0.5% = RP." + totalGaji);
-        System.out.println("Total Gaji sesudah pajak 0.5% = RP." + gajiBersih);
+        System.out.println("Total Gaji sebelum uang lembur dan pajak 0.5% = RP." + totalGaji );
+        System.out.println("Total Gaji sesudah termasuk pajak 0.5% = RP." + tax);
+        System.out.println("Total Gaji Bersih = RP." + gajiBersih);
 
     }
 }
